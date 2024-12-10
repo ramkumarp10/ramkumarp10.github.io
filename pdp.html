@@ -23,7 +23,18 @@
 		}
 	};
 </script>
-<script type='text/javascript' src='https://storm-b9bf2fbb160aba.my.site.com/ESWRPServiceDeployment1732985594192/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<script type='text/javascript' src='https://storm-b9bf2fbb160aba.my.site.com/ESWRPServiceDeployment1732985594192/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
+window.addEventListener("onEmbeddedMessagingReady", () => {
+  console.log("Received the onEmbeddedMessagingReady event.");
+
+  // Send your identity token to Salesforce
+  embeddedservice_bootstrap.userVerificationAPI.setIdentityToken({
+    identityTokenType: "JWT",
+    identityToken: "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiAiM01WRzk5T3hUeSIsICJzdWIiOiAicnBpdGNoYWlAc2FsZXNmb3JjZS5jb20uYWdlbnRmb3JjZSIsICJhdWQiOiAiaHR0cHM6Ly93d3cuYWJjLmNvbSIsICJleHAiOiAiMTczMzc2MjU4NCIsICJqdGkiOiAiOTk5OTkifQ.r9j3IctVkuPw96WdCpBMIaFGHBAsDTOSkCrwS7wHebm5Di5xy4HigX50xfWKltHsI5ntltWeiDdCWo1ddIgeI6D1RVmRs595FTk_WpClBd3CYaOVwpB6C644w5RPKD2CynH-iWws4Gu_IwMbOZJW0t6ztVPupL82TEoFTKoP5FEaRDLPCJ9RcLgszb_Fo0_HV2P7cGvjtA9Otwc4t576O0NHXwpzWUsD6n4OR_q3KFze6QCcbUgvThXni2FyTW7W7E6zEqRTX7WFBrV1tF4iXUTjh5dkrP1SHjpdsz4ulgzwjLaB_pbju1IGheyaNZNOtRcBYuNwvglcuNIE0uideQ"
+  });
+});
+	
+</script>
 
   </body>
 </html>
